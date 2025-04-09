@@ -43,6 +43,7 @@ class WelcomeViewController: UIViewController {
         button.setTitle("다시 로그인", for: .normal)
         button.setTitleColor(UIColor(red: 172/255, green: 176/255, blue: 185/255, alpha: 1), for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.addTarget(self, action: #selector(backToLoginButtonTapped), for: .touchUpInside)
         button.layer.cornerRadius = 6
         return button
     }()
@@ -57,6 +58,15 @@ class WelcomeViewController: UIViewController {
     private func setLayout() {
         [imageView, welcomeLabel, mainButton, backToLoginButton].forEach {
             self.view.addSubview($0)
+        }
+    }
+    
+    @objc
+    private func backToLoginButtonTapped() {
+        if self.navigationController == nil {
+            self.dismiss(animated: true)
+        } else {
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
