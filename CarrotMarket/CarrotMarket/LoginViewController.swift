@@ -75,11 +75,13 @@ class LoginViewController: UIViewController {
     private func presentToWelcomeVC() {
         let welcomeVC = WelcomeViewController()
         welcomeVC.modalPresentationStyle = .formSheet
+        welcomeVC.id = idTextField.text
         self.present(welcomeVC, animated: true)
     }
     
     private func pushToWelcomeVC() {
         let welcomeVC = WelcomeViewController()
+        welcomeVC.id = idTextField.text
         self.navigationController?.pushViewController(welcomeVC, animated: true)
     }
     

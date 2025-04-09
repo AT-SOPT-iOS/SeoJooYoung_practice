@@ -53,11 +53,19 @@ class WelcomeViewController: UIViewController {
         
         self.view.backgroundColor = .white
         self.setLayout()
+        
+        bindID()
     }
     
     private func setLayout() {
         [imageView, welcomeLabel, mainButton, backToLoginButton].forEach {
             self.view.addSubview($0)
+        }
+    }
+    
+    private func bindID() {
+        if let id = id {
+            self.welcomeLabel.text = "\(id == "" ? "???" : id)님\n반가워요!"
         }
     }
     
