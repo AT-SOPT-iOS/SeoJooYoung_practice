@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     }()
     
     private let idTextField: UITextField = {
-        let textfield = UITextField(frame: CGRect(x: 34, y: 276, width: 335, height: 52))
+        let textfield = UITextField(frame: CGRect(x: 30, y: 276, width: 335, height: 52))
         textfield.placeholder = "아이디"
         textfield.font = .systemFont(ofSize: 14)
         textfield.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     }()
     
     private let pwTextField: UITextField = {
-        let textfield = UITextField(frame: CGRect(x: 34, y: 335, width: 335, height: 52))
+        let textfield = UITextField(frame: CGRect(x: 30, y: 335, width: 335, height: 52))
         textfield.placeholder = "비밀번호"
         textfield.font = .systemFont(ofSize: 14)
         textfield.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
     }()
     
     private lazy var loginButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 34, y: 422, width: 335, height: 57))
+        let button = UIButton(frame: CGRect(x: 30, y: 422, width: 335, height: 57))
         button.backgroundColor = UIColor(red: 255/255, green: 111/255, blue: 15/255, alpha: 1)
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
