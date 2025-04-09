@@ -24,6 +24,12 @@ class LoginViewController: UIViewController {
         textfield.placeholder = "아이디"
         textfield.font = .systemFont(ofSize: 14)
         textfield.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
+        textfield.layer.cornerRadius = 3
+        
+        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 52))
+        textfield.leftView = leftPaddingView
+        textfield.leftViewMode = .always
+        
         return textfield
     }()
     
@@ -32,6 +38,12 @@ class LoginViewController: UIViewController {
         textfield.placeholder = "비밀번호"
         textfield.font = .systemFont(ofSize: 14)
         textfield.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
+        textfield.layer.cornerRadius = 3
+        
+        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 52))
+        textfield.leftView = leftPaddingView
+        textfield.leftViewMode = .always
+        
         return textfield
     }()
     
@@ -42,6 +54,7 @@ class LoginViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        button.layer.cornerRadius = 6
         return button
     }()
 
