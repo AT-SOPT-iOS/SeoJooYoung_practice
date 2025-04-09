@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
 
@@ -58,5 +59,21 @@ class LoginViewController: UIViewController {
         }
     }
 
+    private func presentToWelcomeVC() {
+        let welcomeVC = WelcomeViewController()
+        welcomeVC.modalPresentationStyle = .formSheet
+        self.present(welcomeVC, animated: true)
+    }
+    
+    private func pushToWelcomeVC() {
+        let welcomeVC = WelcomeViewController()
+        self.navigationController?.pushViewController(welcomeVC, animated: true)
+    }
+    
+    @objc
+    private func loginButtonTapped() {
+//        presentToWelcomeVC()
+        pushToWelcomeVC()
+    }
 
 }
