@@ -23,7 +23,7 @@ class WelcomeViewController: UIViewController {
         label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.font = .boldSystemFont(ofSize: 25)
+        label.font = .pretendard(size: 25, weight: .extraBold)
         return label
     }()
     
@@ -32,7 +32,7 @@ class WelcomeViewController: UIViewController {
         button.backgroundColor = UIColor(red: 255/255, green: 111/255, blue: 15/255, alpha: 1)
         button.setTitle("메인으로", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.titleLabel?.font = .pretendard(size: 18, weight: .bold)
         button.layer.cornerRadius = 6
         return button
     }()
@@ -42,7 +42,7 @@ class WelcomeViewController: UIViewController {
         button.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
         button.setTitle("다시 로그인", for: .normal)
         button.setTitleColor(UIColor(red: 172/255, green: 176/255, blue: 185/255, alpha: 1), for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.titleLabel?.font = .pretendard(size: 18, weight: .bold)
         button.addTarget(self, action: #selector(backToLoginButtonTapped), for: .touchUpInside)
         button.layer.cornerRadius = 6
         return button

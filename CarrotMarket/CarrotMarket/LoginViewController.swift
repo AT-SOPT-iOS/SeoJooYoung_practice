@@ -15,14 +15,14 @@ class LoginViewController: UIViewController {
         label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.font = .boldSystemFont(ofSize: 16)
+        label.font = .pretendard(size: 18, weight: .bold)
         return label
     }()
     
     private let idTextField: UITextField = {
         let textfield = UITextField(frame: CGRect(x: 30, y: 276, width: 335, height: 52))
         textfield.placeholder = "아이디"
-        textfield.font = .systemFont(ofSize: 14)
+        textfield.font = .pretendard(size: 14, weight: .semiBold)
         textfield.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
         textfield.layer.cornerRadius = 3
         textfield.setLeftView(width: 23)
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     private let pwTextField: UITextField = {
         let textfield = UITextField(frame: CGRect(x: 30, y: 335, width: 335, height: 52))
         textfield.placeholder = "비밀번호"
-        textfield.font = .systemFont(ofSize: 14)
+        textfield.font = .pretendard(size: 14, weight: .semiBold)
         textfield.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
         textfield.layer.cornerRadius = 3
         textfield.setLeftView(width: 23)
@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
         button.backgroundColor = UIColor(red: 255/255, green: 111/255, blue: 15/255, alpha: 1)
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.titleLabel?.font = .pretendard(size: 18, weight: .bold)
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         button.layer.cornerRadius = 6
         return button
@@ -77,6 +77,7 @@ class LoginViewController: UIViewController {
         let welcomeVC = WelcomeViewController()
         welcomeVC.id = idTextField.text
         self.navigationController?.pushViewController(welcomeVC, animated: true)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     @objc
