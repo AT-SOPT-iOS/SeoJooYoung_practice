@@ -7,7 +7,7 @@
 
 ## 📸 Screenshot
 
-## 🍀 Learn
+## 💡 Learn
 -
 -
 
