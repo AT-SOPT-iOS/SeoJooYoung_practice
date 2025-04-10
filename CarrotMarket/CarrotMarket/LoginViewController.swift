@@ -25,10 +25,7 @@ class LoginViewController: UIViewController {
         textfield.font = .systemFont(ofSize: 14)
         textfield.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
         textfield.layer.cornerRadius = 3
-        
-        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 52))
-        textfield.leftView = leftPaddingView
-        textfield.leftViewMode = .always
+        textfield.setLeftView(width: 23)
         
         return textfield
     }()
@@ -39,10 +36,7 @@ class LoginViewController: UIViewController {
         textfield.font = .systemFont(ofSize: 14)
         textfield.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
         textfield.layer.cornerRadius = 3
-        
-        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 52))
-        textfield.leftView = leftPaddingView
-        textfield.leftViewMode = .always
+        textfield.setLeftView(width: 23)
         
         return textfield
     }()
@@ -91,4 +85,12 @@ class LoginViewController: UIViewController {
         pushToWelcomeVC()
     }
 
+}
+
+private extension UITextField {
+    func setLeftView(width: CGFloat) {
+        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 52))
+        self.leftView = leftPaddingView
+        self.leftViewMode = .always
+    }
 }
