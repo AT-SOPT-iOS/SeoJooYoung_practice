@@ -62,6 +62,8 @@ class ItemViewController: UIViewController {
     }
     
     private func setLayout() {
+        self.view.backgroundColor = .white
+        
         self.view.addSubview(headerStackView)
         headerStackView.addSubview(headerTownLabel)
         headerStackView.addSubview(headerButtonStackView)
