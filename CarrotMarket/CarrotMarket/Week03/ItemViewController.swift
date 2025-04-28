@@ -105,8 +105,8 @@ class ItemViewController: UIViewController {
         
         collectionView.snp.makeConstraints {
             $0.top.equalTo(headerStackView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(calculateCellHeight())
+            $0.leading.trailing.bottom.equalToSuperview()
+//            $0.height.equalTo(calculateCellHeight())
         }
     }
     
