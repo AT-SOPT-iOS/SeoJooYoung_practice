@@ -67,9 +67,6 @@ class ItemViewController: UIViewController {
         headerStackView.addSubview(headerButtonStackView)
         [headerSearchButton, headerMenuButton, headerNotiButton].forEach {
             headerButtonStackView.addSubview($0)
-//            $0.snp.makeConstraints { make in
-//                make.width.height.equalTo(24)
-//            }
         }
         self.view.addSubview(collectionView)
         
