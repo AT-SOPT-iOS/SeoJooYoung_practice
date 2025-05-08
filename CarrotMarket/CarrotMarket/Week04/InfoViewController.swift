@@ -28,21 +28,21 @@ final class InfoViewController: UIViewController {
     // MARK: - Actions
 
     
-//     @objc private func searchButtonTap() {
-//        Task {
-//            do {
-//                let nicknameList = try await GetInfoService.shared.fetchNicknameList(
-//                    keyword: self.keyword.isEmpty ? nil : self.keyword
-//                )
-//
-//                let nicknameTexts = nicknameList.map { "\($0)" }.joined(separator: "\n")
-//                self.infoLabel.text = "닉네임 리스트:\n\(nicknameTexts)"
-//
-//            } catch {
-//                self.infoLabel.text = "조회 실패: \(error.localizedDescription)"
-//            }
-//        }
-//    }
+     @objc private func searchButtonTap() {
+        Task {
+            do {
+                let nicknameList = try await GetInfoService.shared.fetchNicknameList(
+                    keyword: self.keyword.isEmpty ? nil : self.keyword
+                )
+
+                let nicknameTexts = nicknameList.map { "\($0)" }.joined(separator: "\n")
+                self.infoLabel.text = "닉네임 리스트:\n\(nicknameTexts)"
+
+            } catch {
+                self.infoLabel.text = "조회 실패: \(error.localizedDescription)"
+            }
+        }
+    }
 
 
     
@@ -83,9 +83,9 @@ final class InfoViewController: UIViewController {
     }
 
     private lazy var searchButton = UIButton().then {
-//        $0.addTarget(self,
-//                     action: #selector(searchButtonTap),
-//                     for: .touchUpInside)
+        $0.addTarget(self,
+                     action: #selector(searchButtonTap),
+                     for: .touchUpInside)
         $0.backgroundColor = .blue
         $0.setTitle("검색", for: .normal)
         $0.setTitleColor(.white, for: .normal)

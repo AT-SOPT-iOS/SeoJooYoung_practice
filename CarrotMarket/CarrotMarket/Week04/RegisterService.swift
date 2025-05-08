@@ -80,6 +80,7 @@ class RegisterService {
 
         do {
             let decoded = try JSONDecoder().decode(RegisterResponseWrapper.self, from: data)
+            print("회원가입 성공데스요")
             return decoded.data
         } catch {
             print("디코딩 실패:", error)
