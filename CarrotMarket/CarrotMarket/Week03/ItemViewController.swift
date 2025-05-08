@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ItemViewController: UIViewController {
+final class ItemViewController: UIViewController {
     
     final let carrotLineSpacing: CGFloat = 10
     final let carrotInterItemSpacing: CGFloat = 21
@@ -147,12 +147,21 @@ extension ItemViewController: UICollectionViewDelegate {
     
 }
 extension ItemViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return itemData.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCollectionViewCell.identifier, for: indexPath) as? ItemCollectionViewCell else { return UICollectionViewCell() }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ItemCollectionViewCell.identifier,
+            for: indexPath
+        ) as? ItemCollectionViewCell else { return UICollectionViewCell() }
         cell.dataBind(itemData[indexPath.item])
         return cell
     }
