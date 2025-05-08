@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  CarrotMarket
 //
 //  Created by seozero on 5/8/25.
@@ -11,10 +11,9 @@ import SnapKit
 import Then
 
 
-final class LoginViewController2: UIViewController {
-
-
-    private var loginId: String = ""
+final class RegisterViewController: UIViewController {
+    
+    private var registerId: String = ""
     private var password: String = ""
     private var nickName: String = ""
     
@@ -23,16 +22,10 @@ final class LoginViewController2: UIViewController {
         setLayout()
     }
     
-    @objc private func infoViewButtonTap() {
-        let infoVC = InfoViewController()
-        self.present(infoVC, animated: true)
-    }
-    
-    
     @objc private func textFieldDidEditing(_ textField: UITextField) {
         switch textField {
         case idTextField:
-            loginId = textField.text ?? ""
+            registerId = textField.text ?? ""
         case passwordTextField:
             password = textField.text ?? ""
         default:
@@ -43,7 +36,7 @@ final class LoginViewController2: UIViewController {
     @objc private func registerButtonTap() {
         Task {
             do {
-                let response = try await RegisterService.shared.PostRegisterData(loginId: self.loginId,
+                let response = try await RegisterService.shared.PostRegisterData(loginId: self.registerId,
                                                                                  password: self.password,
                                                                                  nickName: self.nickName)
                 
@@ -80,7 +73,7 @@ final class LoginViewController2: UIViewController {
             $0.top.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(200)
         }
         
-        [idTextField, passwordTextField, nickNameTextField, registerButton, infoViewButton].forEach {
+        [idTextField, passwordTextField, nickNameTextField, registerButton].forEach {
             self.stackView.addArrangedSubview($0)
         }
     }
@@ -119,14 +112,5 @@ final class LoginViewController2: UIViewController {
         $0.setTitle("회원가입", for: .normal)
         $0.titleLabel?.textColor = .white
         $0.addTarget(self, action: #selector(registerButtonTap), for: .touchUpInside)
-    }
-    
-    private lazy var infoViewButton = UIButton().then {
-        $0.addTarget(self,
-                     action: #selector(infoViewButtonTap),
-                     for: .touchUpInside)
-        $0.backgroundColor = .blue
-        $0.setTitle("회원정보 조회", for: .normal)
-        $0.titleLabel?.textColor = .white
     }
 }
