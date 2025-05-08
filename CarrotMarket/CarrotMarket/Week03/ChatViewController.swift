@@ -15,7 +15,8 @@ final class ChatViewController: UIViewController {
     private let tableView = UITableView(frame: .zero, style: .plain)
     
     override func viewDidLoad() {
-    
+        self.view.backgroundColor = .white
+        
         super.viewDidLoad()
         
         setLayout()
@@ -25,7 +26,6 @@ final class ChatViewController: UIViewController {
     }
     
     private func setLayout() {
-        self.view.backgroundColor = .white
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
