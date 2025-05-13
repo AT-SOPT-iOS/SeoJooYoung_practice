@@ -127,13 +127,9 @@ final class LoginViewController_server: UIViewController {
             do {
                 let response = try await LoginService.shared.postLoginData(loginId: self.loginId, password: self.password)
                 
-                let alert = UIAlertController(
-                    title: "로그인 성공",
-                    message: "환영합니다! (userId: \(response.userId))",
-                    preferredStyle: .alert
-                )
-                alert.addAction(UIAlertAction(title: "확인", style: .default))
-                self.present(alert, animated: true)
+                let welcomeVC = WelcomeViewController_server(nickname: response.userId.description, userId: response.userId)
+                self.navigationController?.pushViewController(welcomeVC, animated: true)
+
             } catch {
                 let alert = UIAlertController(
                     title: "로그인 실패",

@@ -15,3 +15,10 @@ struct NicknameListResponseWrapper: Codable {
 struct NicknameListResponseModel: Codable {
     let nicknameList: [String]
 }
+
+struct NicknamePatchResponseWrapper: Codable {
+    let success: Bool
+    let code: String
+    let message: String
+    let data: String?
+}
